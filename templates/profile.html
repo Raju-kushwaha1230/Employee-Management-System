@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>Profile</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <p>
+            Username: {{ form.username.data }}<br>
+            Employee ID: {{ form.employee_id.data }}<br>
+        </p>
+        <p>
+            New Password: {{ form.new_password(size=32) }}<br>
+            {% if form.new_password.errors %}
+                <ul>
+                    {% for error in form.new_password.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

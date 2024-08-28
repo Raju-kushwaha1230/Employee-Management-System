@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    
+</head>
+
+<body>
+    <div class="signup">
+        <h1>Sign Up</h1>
+        <form method="post" class="form">
+            {{ form.hidden_tag() }}
+            <p>
+                <label for="username">{{ form.username.label }}</label>
+                {{ form.username(size=32) }}
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                <label for="password">{{ form.password.label }}</label>
+                {{ form.password(size=32) }}
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                <label for='employee_id'>{{ form.employee_id.label }}</label>
+                {{ form.employee_id(size=32) }}
+                {% for error in form.employee_id.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                <label for="role">{{ form.role.label }}</label>
+                {{ form.role() }}
+                {% for error in form.role.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.submit() }}
+            </p>
+        </form>
+        <a href="{{ url_for('login') }}">Already have an account? Login here</a>
+    </div>
+</body>
+
+</html>

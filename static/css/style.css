@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup{
+    position: relative;
+    top: 2rem;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 26rem;
+    width: 100%;
+    text-align: center;
+}
+
+.signup h1{
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 5vh;
+    letter-spacing: 1px;
+}
+
+.signup .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup .form p{
+    width: 100%;
+    margin-bottom: 1rem;
+    
+}
+
+.form label{
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 14px;
+}
+
+.form input, .form select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+}
+
+.form input:focus, .form select:focus{
+    border-color: #74ebd5;
+}
+
+.form input[type="submit"]{
+    background-color: #74ebd5;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 15px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.form input[type="submit"]:hover{
+    background-color: #66dac4;
+}
+
+.signup a{
+    display: inline-block;
+    margin-top: 20px;
+    color: #74ebd5;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.signup span{
+    font-size: 12px;
+    color: red;
+}

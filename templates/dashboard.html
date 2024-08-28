@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+        <header class="dashboard-header">
+            <h1>Employee Dashboard</h1>
+            <p>Welcome , <strong> {{ username }} </strong>!</p>
+            <p>Your role is: <span class="role"> {{ role }} </span></p>
+        </header>
+        <section class="employee-content">
+            {% if role == 'Admin' %}
+            <a href="{{ url_for('admin_dashboard') }}" class="btn admin-btn">Go to Admin Dashboard</a>
+            {% endif %}
+            {% if employee %}
+            <div class="employee-details">
+                <h2>Employee Details </h2>
+                <p> </strong> Employee Id : <strong>{{ employee[0] }}</p>
+                <p><strong>Name : </strong> {{ employee[1] }}</p>
+                <p><strong> Position: </strong> {{ employee[2] }}</p>
+                <p><strong>Salary:</strong> {{ employee[3] }}</p>
+            </div>
+            {% else %}
+            <p>No employee details found.</p>
+            {% endif %}
+        </section>
+        <footer class="dashboard-footer">
+        <a href="{{ url_for('logout') }}" class="btn logout-btn">Logout</a>
+    </footer>
+    </div>
+</body>
+
+</html>
